@@ -68,25 +68,33 @@ function App() {
       return;
     }
 
-    if (value === "=") {
-      if (!operation) return;
+   if (value === "=") {
+  if (!operation) return;
 
-      try {
-        const expression = operation.replace(/,/g, ".");
-        let calc = eval(expression);
+  try {
+    const expression = operation.replace(/,/g, ".");
+    let calc = eval(expression);
 
-        const resultStr = parseFloat(calc.toFixed(10)).toString();
-
-        setResult(resultStr);
-        setCurrent(resultStr);
-        setOperation(resultStr);
-
-      } catch (error) {
-        setResult("Error");
-      }
-
+    // ✅ Verificar división por cero
+    if (!isFinite(calc)) {
+      setResult("Indefinido");
+      setOperation("Indefinido");
+      setCurrent("");
       return;
     }
+
+    const resultStr = parseFloat(calc.toFixed(10)).toString();
+
+    setResult(resultStr);
+    setCurrent(resultStr);
+    setOperation(resultStr);
+
+  } catch (error) {
+    setResult("Error");
+  }
+
+  return;
+}
   };
 
   const format = (val) => val?.replace(".", ",");
