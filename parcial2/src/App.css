@@ -1,0 +1,81 @@
+.app {
+  text-align: center;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+  
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1c1c1c;
+}
+
+
+.calculator {
+  background: #222121;
+  padding: 20px;
+  border-radius: 30px;
+  width: 300px;
+}
+
+.calculator h1 {
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.display {
+  width: 260px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgb(192, 185, 185);
+  color: rgb(0, 0, 0);
+  border-radius: 20px;
+  text-align: right;
+}
+
+.operation {
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+.result {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* TECLADO */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 65px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+.btn {
+  height: 65px;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #333;
+  color: white;
+}
+
+
+.btn:hover {
+  background: #555;
+}
+
+
+.btn:nth-child(4n) {
+  background: orange;
+  color: white;
+}
+
+
